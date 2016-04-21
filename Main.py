@@ -21,7 +21,8 @@ def __get_pass__():
     words = list(open('text.txt'))
     random.SystemRandom().shuffle(words)
     target = open("pass.txt",'w')
-    target.write((' '.join(w.strip() for w in words[:4])))
+    wodries = (' '.join(w.strip() for w in words[:4]))
+    target.write(wodries)
 
 
 
