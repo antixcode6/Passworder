@@ -17,11 +17,11 @@ def __size_check__(number): #Some would say this is useless - but I say to hell 
     else:
         return True
 
-def __get_pass__():
+def __get_pass__(p_size):
     words = list(open('text.txt'))
     random.SystemRandom().shuffle(words)
     target = open("pass.txt",'w')
-    wodries = (' '.join(w.strip() for w in words[:4]))
+    wodries = (' '.join(w.strip() for w in words[:p_size]))
     target.write(wodries)
 
 
@@ -33,19 +33,14 @@ def main():
     if(__size_check__(pass_size) == False):
         sys.exit()
     else:
-        __get_pass__()
-        '''
-         open("text.txt", 'a')
+        __get_pass__(pass_size)
+
+        open("text.txt", 'a')
         if sys.platform == "win32":
-            os.startfile("text.txt")
+            os.startfile("pass.txt")
         else:
             opener = "open" if sys.platform == "darwin" else "xdg-open"
-            subprocess.call([opener, "text.txt"])
-        '''
-
-
-
-
+            subprocess.call([opener, "pass.txt"])
     sys.exit()
 if __name__ == '__main__':
   main()
