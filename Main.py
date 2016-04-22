@@ -5,7 +5,7 @@ import random
 import subprocess
 
 
-def __size_check__(number): #Some would say this is useless - but I say to hell with bad test cases
+def __size_check__(number):
     try:
         if(int(number) <= 2):
             print "Too little words selected: must select more than two (2)"
@@ -27,7 +27,7 @@ def __get_pass__(p_size):
 
 
 def main():
-    print "Passworder Program"
+    print "Password size must be between 2 and 8"
     pass_size = int(raw_input("Password Size: "))
 
     if(__size_check__(pass_size) == False):
